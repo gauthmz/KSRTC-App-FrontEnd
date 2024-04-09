@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import AddBus from './components/AddBus';
+import ViewAllBus from './components/ViewAllBus';
+import DeleteBus from './components/DeleteBus';
+import SearchBus from './components/SearchBus';
+import BusNavbar from './components/BusNavbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+    <Routes>
+
+      <Route path='/' element={<AddBus />} />
+      <Route path='/search' element={<SearchBus />} />
+      <Route path='/view' element={<ViewAllBus />} />
+      <Route path='/delete' element={<DeleteBus />} />
+
+    </Routes>
+
+  </BrowserRouter>
   );
 }
 
